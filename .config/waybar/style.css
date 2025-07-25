@@ -1,0 +1,142 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "MesloLGS NF";
+    font-weight: 600;
+    min-height: 0;
+}
+
+tooltip {
+  border-radius: 5px;
+}
+
+tooltip label {
+  font-size: 15px;
+  color: #a3be83;
+}
+
+.modules-left {
+  border-radius: 3px;
+  padding: 0 1.1em;
+  border: 2px solid #3B4352;
+}
+
+.modules-center {
+  /* border: 2px solid #3B4352; */
+  /* border-radius: 3px; */
+  padding: 0 1.1em;
+}
+
+.modules-right {
+  border-radius: 3px;
+  padding: .2em .7em;
+  border: 2px solid #3B4352;
+}
+
+
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "MesloLGS NF";
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    font-size: 20px;
+    background: transparent;
+    color: #81a1c1;
+    /* border-top: 2px solid transparent; */
+
+    transition: color .3s ease;
+}
+
+#workspaces button.focused {
+  color: #4c566a;
+  /* border-top: 2px solid #4c566a; */
+}
+
+#workspaces button.urgent {
+    color: #d08770;
+   /*  border-top: 2px solid #d08770 */
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode {
+    padding: 0 4px;
+    margin: 0 10px;
+}
+
+#clock {
+    padding: 0 4px;
+    margin: 0 10px;
+    color: #b48ead;
+    font-weight: bold;
+}
+
+#battery {
+    color: #8fbcbb;
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color: #d08770;
+}
+
+#memory {
+    color: #ebcb8b;
+}
+
+#network {
+    color: #b48ead;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#pulseaudio {
+    color: #bf616a;
+}
+
+#pulseaudio.muted {
+    color: #8fbcbb;
+}
+
+#tray {
+}
