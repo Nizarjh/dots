@@ -7,30 +7,30 @@
 }
 
 tooltip {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 tooltip label {
-  font-size: 15px;
-  color: #a3be83;
+    font-size: 15px;
+    color: #a3be83;
 }
 
 .modules-left {
-  border-radius: 3px;
-  padding: 0 1.1em;
-  border: 2px solid #3B4352;
+    /* border-radius: 3px; */
+    padding: 0;
+    /* border: 2px solid #3B4352; */
 }
 
 .modules-center {
-  /* border: 2px solid #3B4352; */
-  /* border-radius: 3px; */
-  padding: 0 1.1em;
+    /* border: 2px solid #3B4352; */
+    /* border-radius: 3px; */
+    padding: 0 1.1em;
 }
 
 .modules-right {
-  border-radius: 3px;
-  padding: .2em .7em;
-  border: 2px solid #3B4352;
+    border-radius: 3px;
+    padding: .2em .7em;
+    border: 2px solid #3B4352;
 }
 
 
@@ -44,6 +44,7 @@ window#waybar {
     font-weight: bold;
     font-family: "MesloLGS NF";
 }
+
 /*
 #workspaces {
     padding: 0 5px;
@@ -60,14 +61,9 @@ window#waybar {
     transition: color .3s ease;
 }
 
-#workspaces button.focused {
-  color: #4c566a;
-  /* border-top: 2px solid #4c566a; */
-}
-
-#workspaces button.urgent {
-    color: #d08770;
-   /*  border-top: 2px solid #d08770 */
+#workspaces button.active {
+    color: #4c566a;
+    /* border-top: 2px solid #4c566a; */
 }
 
 #mode {
@@ -75,19 +71,30 @@ window#waybar {
     border-bottom: 3px solid white;
 }
 
-#battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode {
-    padding: 0 4px;
-    margin: 0 10px;
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+    padding: 0 6px;
+    margin: 0 2px;
 }
 
-#clock {
-    padding: 0 4px;
-    margin: 0 10px;
-    color: #b48ead;
-    font-weight: bold;
+
+
+#temperature {
+    padding: 0 0px;
+    margin-left: 6px;
+}
+
+#backlight {
+    padding: 0 0px;
+    margin-right: 7px;
+    color: #e9ca8e;
 }
 
 #battery {
+    padding: 0 0px;
+    margin-left: 7px;
     color: #8fbcbb;
 }
 
@@ -96,13 +103,7 @@ window#waybar {
 }
 
 #battery.charging {
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
+    color: #a3be83;
 }
 
 #battery.warning:not(.charging) {
@@ -113,6 +114,23 @@ window#waybar {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
+#clock {
+    padding: 0 4px;
+    margin: 0 10px;
+    color: #b48ead;
+    font-weight: bold;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+
 
 #cpu {
     color: #d08770;
@@ -138,5 +156,7 @@ window#waybar {
     color: #8fbcbb;
 }
 
-#tray {
+#language {
+    
+    margin-right: 14px;
 }
