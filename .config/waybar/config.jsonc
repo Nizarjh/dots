@@ -5,10 +5,14 @@
   "margin-left": 15,
   "margin-right": 15,
   "margin-top": 10,
-
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock"],
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
+    "hyprland/language",
     "backlight",
     "pulseaudio",
     "network",
@@ -17,41 +21,51 @@
     "memory",
     "battery"
   ],
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
     "sort-by-number": true,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "focused": "",
+      "active": "",
       "default": ""
     }
   },
-
+  "hyprland/language": {
+    "format": "{} ",
+    "format-en": "Us",
+    "format-ru": "Ru"
+  },
   "temperature": {
     // "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp4_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
-    },
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
-    "format-icons": ["", ""],
+    "format-icons": [
+      "",
+      ""
+    ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
-    },
-
-
+  },
   "backlight": {
     "device": "amdgpu_bl1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", ""]
+    "format-icons": [
+      "",
+      ""
+    ]
   },
-
   "clock": {
     "format": "{:%H:%M} ",
     "format-alt": "{:%Y-%m-%d} "
@@ -62,7 +76,6 @@
   "memory": {
     "format": "{}% "
   },
-  
   "battery": {
     "bat": "BAT1",
     "states": {
@@ -70,7 +83,13 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "network": {
     "format-wifi": "{signalStrength}% ",
@@ -88,7 +107,10 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": [
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol"
   }
