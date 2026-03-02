@@ -1,3 +1,4 @@
+#https://github.com/ray-pH/waybar-cava
 #! /bin/bash
 # set -euo pipefail # quickfix (https://github.com/Alexays/Waybar/issues/358)
 set -o errexit # quickfix (https://github.com/Alexays/Waybar/issues/121)
