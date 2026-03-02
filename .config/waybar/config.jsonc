@@ -6,7 +6,8 @@
   "margin-right": 15,
   "margin-top": 10,
   "modules-left": [
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/cava"
   ],
   "modules-center": [
     "clock"
@@ -64,17 +65,22 @@
     "format-icons": [
       "",
       ""
-    ]
+    ],
+    "on-scroll-up": "brightnessctl set 2%+",
+    "on-scroll-down": "brightnessctl --min-value=1 set 2%-"
   },
   "clock": {
     "format": "{:%H:%M} ",
     "format-alt": "{:%Y-%m-%d} "
   },
   "cpu": {
-    "format": "{usage}% "
+    "format": "{usage}% ",
+    "on-click" : "foot -e btop",
+    "tooltip" : false
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% ",
+    "on-click" : "foot -e htop"
   },
   "battery": {
     "bat": "BAT1",
@@ -94,7 +100,8 @@
   "network": {
     "format-wifi": "{signalStrength}% ",
     "format-ethernet": "",
-    "format-disconnected": ""
+    "format-disconnected": "",
+    "on-click": "foot -e nmtui"
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -113,5 +120,13 @@
       ]
     },
     "on-click": "pavucontrol"
+  },
+
+
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/cava.sh",
+    "return-type": "stdout"
   }
+
 }
