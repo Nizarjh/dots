@@ -29,7 +29,7 @@ Navigate to the dotfiles directory:
 ```
 
 Install Dependecies
-Using AUR Helper (Arch Linux - yay):
+
 ```bash
 sudo xbps-install -Syu pavucontrol brightnessctl fastfetch hyprland hyprlock kitty cava wofi Waybar jq pipewire btop htop slurp playerctl playerctl wl-clipboard
 ```
