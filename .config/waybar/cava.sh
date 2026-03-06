@@ -1,5 +1,5 @@
-#https://github.com/ray-pH/waybar-cava
 #! /bin/bash
+#https://github.com/ray-pH/waybar-cava - upstream
 # set -euo pipefail # quickfix (https://github.com/Alexays/Waybar/issues/358)
 set -o errexit # quickfix (https://github.com/Alexays/Waybar/issues/121)
 
@@ -15,7 +15,7 @@ do
 done
 
 # write cava config
-config_file="/tmp/polybar_cava_config"
+config_file="/tmp/waybar_cava_config"
 echo "
 [general]
 bars = 18
