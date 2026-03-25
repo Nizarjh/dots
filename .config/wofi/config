@@ -1,0 +1,13 @@
+show=drun
+width=500
+height=350
+always_run=true
+show_all=false
+print_command=true
+insensitive=true
+prompt=Поиск...
+columns=1
+allow_images=true
+image_size=24
+display_generic=true
+location=center

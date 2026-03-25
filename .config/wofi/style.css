@@ -22,7 +22,6 @@ window {
   border: 0.16em solid @smth;
   border-radius: 0.1em;
   background-color: @base;
-  animation: slideIn 0.5s ease-in-out both;
 }
 
 /* Slide In */
