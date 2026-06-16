@@ -1,0 +1,81 @@
+{
+  //editor
+  "telemetry.telemetryLevel": "off",
+  "sonarlint.disableTelemetry": true,
+  "window.zoomLevel": 2,
+  "workbench.startupEditor": "none",
+  "workbench.layoutControl.enabled": false,
+  "editor.fontSize": 18,
+  "editor.letterSpacing": 0.5,
+  "terminal.integrated.fontSize": 14,
+  "editor.hover.delay": 500,
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "explorer.confirmDelete": false,
+  "debug.showBreakpointsInOverviewRuler": true,
+  "redhat.telemetry.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "workbench.colorTheme": "Ayu Dark",
+  "window.confirmSaveUntitledWorkspace": false,
+  "editor.glyphMargin": false,
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": false,
+  
+  //git and container
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "always",
+  "git.enableSmartCommit": true,
+  "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+  "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+  //java
+  "java.trace.server": "verbose",
+  "java.server.launchMode": "LightWeight",
+  "java.jdt.ls.lombokSupport.enabled": true,
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.selectionRange.enabled": true,
+  "java.debug.settings.forceBuildBeforeLaunch": false,
+  "boot-java.support-spring-xml-config.on": true,
+  "gradle.javaDebug.cleanOutput": true,
+  "java.import.gradle.java.home": "/usr/lib/jvm/openjdk17",
+  //env of java
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "xml.codeLens.enabled": true,
+  "rsp-ui.enableStartServerOnActivation": [
+    {
+      "id": "redhat.vscode-community-server-connector",
+      "name": "Community Server Connector",
+      "startOnActivation": true
+    }
+  ],
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "School",
+      "database": "school",
+      "username": "postgres",
+      "password": "root"
+    }
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "warmUp.changeCount": "30",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.activityBar.location": "top",
+  "diffEditor.ignoreTrimWhitespace": false,
+}
