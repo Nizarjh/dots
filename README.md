@@ -15,7 +15,7 @@ If you like this setup, consider giving them a ⭐
    (replace the architecture as needed):
 
     ```
-    echo repository=https://raw.githubusercontent.com/Event-Horizon-VL/blackhole-vl/repository-x86_64 | sudo tee /etc/xbps.d/20-repository-extra.conf
+    echo "repository=https://mirror.black-hole.dev/$(uname -m)/"| sudo tee /etc/xbps.d/20-repository-extra.conf
     ```
 
 2. Refresh repositories and accept the fingerprint:

@@ -1,0 +1,11 @@
+polkit.addRule(function(action, subject) {
+    if ((subject.isInGroup("disk") || subject.isInGroup("storage")) &&
+        (action.id == "org.freedesktop.udisks2.filesystem-mount" ||
+         action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
+         action.id == "org.freedesktop.udisks2.filesystem-unmount-others" ||
+         action.id == "org.freedesktop.udisks2.drive-eject" ||
+         action.id == "org.freedesktop.udisks2.encrypted-unlock" ||
+         action.id == "org.freedesktop.udisks2.power-off-drive")) {
+        return polkit.Result.YES;
+    }
+});
