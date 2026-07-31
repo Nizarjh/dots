@@ -15,7 +15,8 @@ If you like this setup, consider giving them a ⭐
    (replace the architecture as needed):
 
     ```
-    echo "repository=https://mirror.black-hole.dev/$(uname -m)/"| sudo tee /etc/xbps.d/20-repository-extra.conf
+    sudo cp /usr/share/xbps.d/00-repository-main.conf /etc/xbps.d/
+    sudo sed -i "1i repository=https://mirror.black-hole.dev/$(xbps-uhelper arch)" /etc/xbps.d/00-repository-main.conf
     ```
 
 2. Refresh repositories and accept the fingerprint:
