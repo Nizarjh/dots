@@ -2,6 +2,8 @@
 
 @define-color white  #ffffff;
 
+@define-color red #ff0000;
+
 @define-color smth  rgb(129, 161, 193);
 
 @define-color text  rgb(192, 202, 245);
@@ -88,7 +90,7 @@ window {
 }
 
 #input * {
-  outline: 4px solid @red!important;
+  outline: 4px solid @red;
 }
 
 /* Text */
@@ -118,5 +120,5 @@ window {
 }
 
 #entry:drop(active) {
-  background-color: @smth!important;
+  background-color: @smth;
 }

@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
+  "height": 28,
   "margin-left": 15,
   "margin-right": 15,
   "margin-top": 10,
@@ -39,7 +39,7 @@
   },
   "temperature": {
     // "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon5/temp2_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp2_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",

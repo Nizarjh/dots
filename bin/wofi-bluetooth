@@ -24,7 +24,7 @@ wait_for_state() {
     local state="$2"
     local expected="$3"
 
-    for i in {1..25}; do
+    for i in {1..16}; do
         if _bluetoothctl info "$mac" | grep -q "^$state: $expected"; then
             return 0
         fi
@@ -46,9 +46,12 @@ power_on() {
 toggle_power() {
     if power_on; then
         _bluetoothctl power off
+        sleep 0.5 
         show_menu
     else
+    	rfkill unblock bluetooth
         _bluetoothctl power on
+        sleep 0.5 
         show_menu
     fi
 }
@@ -67,7 +70,7 @@ scan_on() {
 # Toggles scanning state
 toggle_scan() {
     if scan_on; then
-        kill $(pgrep -f "bluetoothctl --timeout 5 scan on")
+        pkill -f 'bluetoothctl --timeout 5 scan on' 2>/dev/null
         _bluetoothctl scan off
         show_menu
     else
@@ -133,6 +136,8 @@ device_connected() {
 
 # Toggles device connection
 toggle_connection() {
+    local mac="$1"
+
     if device_connected "$1"; then
         _bluetoothctl disconnect "$1"
         wait_for_state "$mac" "Connected" "no"
@@ -158,6 +163,8 @@ device_paired() {
 
 # Toggles device paired state
 toggle_paired() {
+    local mac="$1"
+
     if device_paired "$1"; then
         _bluetoothctl remove "$1"
         wait_for_state "$mac" "Paired" "no"
@@ -183,6 +190,8 @@ device_trusted() {
 
 # Toggles device connection
 toggle_trust() {
+    local mac="$1"
+
     if device_trusted "$1"; then
         _bluetoothctl untrust "$1"
         wait_for_state "$mac" "Trusted" "no"
@@ -320,7 +329,7 @@ show_menu() {
 }
 
 # wofi command to pipe into, can add any options here
-wofi_command="wofi -d -i -k "/dev/null" -p"
+wofi_command='wofi -d -i -k /dev/null -p'
 
 case "$1" in
     --status)
