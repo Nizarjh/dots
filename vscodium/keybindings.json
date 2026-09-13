@@ -581,11 +581,4 @@
         "command": "-workbench.action.chat.undoEdits",
         "when": "inChat && !textInputFocus"
     },
-
-
-
-
-    
-
-
 ]

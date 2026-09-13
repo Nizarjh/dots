@@ -42,7 +42,7 @@
   "java.debug.settings.forceBuildBeforeLaunch": false,
   "boot-java.support-spring-xml-config.on": true,
   "gradle.javaDebug.cleanOutput": true,
-  "java.import.gradle.java.home": "/usr/lib/jvm/openjdk17",
+  "java.import.gradle.java.home": "/usr/lib/jvm/openjdk25",
   //env of java
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
@@ -55,19 +55,7 @@
       "startOnActivation": true
     }
   ],
-  "sqltools.connections": [
-    {
-      "ssh": "Disabled",
-      "previewLimit": 50,
-      "server": "localhost",
-      "port": 5432,
-      "driver": "PostgreSQL",
-      "name": "School",
-      "database": "school",
-      "username": "postgres",
-      "password": "root"
-    }
-  ],
+  "sqltools.connections": [],
   "workbench.iconTheme": "material-icon-theme",
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -78,4 +66,7 @@
   },
   "workbench.activityBar.location": "top",
   "diffEditor.ignoreTrimWhitespace": false,
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
 }
