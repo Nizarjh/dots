@@ -1,0 +1,8 @@
+# =========================
+# Programs
+# =========================
+set $term foot
+set $fileManager "foot -e yazi"
+set $menu "wofi --show drun"
+set $editor codium
+

@@ -1,0 +1,145 @@
+# =========================
+# Apps
+# =========================
+
+bindsym $mod+Return exec $term
+bindsym $mod+e exec $fileManager
+bindsym $mod+d exec $menu
+
+# =========================
+# Editor profiles
+# =========================
+
+bindsym $mod+Shift+j exec "$editor --profile 'Java'"
+bindsym $mod+Shift+r exec "$editor --profile 'Rust'"
+
+# =========================
+# System controls
+# =========================
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+bindsym $mod+Ctrl+c reload
+
+# =========================
+# Window actions
+# =========================
+
+bindsym $mod+v floating toggle
+bindsym $mod+f fullscreen
+bindsym $mod+j layout toggle split
+
+# =========================
+# Focus movement
+# =========================
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+# =========================
+# Move windows
+# =========================
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+# =========================
+# Resize windows
+# =========================
+
+bindsym $mod+Ctrl+$left resize shrink width 60px
+bindsym $mod+Ctrl+$right resize grow width 60px
+bindsym $mod+Ctrl+$up resize shrink height 60px
+bindsym $mod+Ctrl+$down resize grow height 60px
+
+bindsym $mod+Ctrl+Left resize shrink width 60px
+bindsym $mod+Ctrl+Right resize grow width 60px
+bindsym $mod+Ctrl+Up resize shrink height 60px
+bindsym $mod+Ctrl+Down resize grow height 60px
+
+# =========================
+# Workspaces
+# =========================
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# =========================
+# Special workspace
+# =========================
+
+bindsym $mod+Shift+s scratchpad show
+bindsym $mod+s move scratchpad
+
+# =========================
+# Mouse workspace scroll
+# =========================
+
+bindsym $mod+button4 workspace next
+bindsym $mod+button5 workspace prev
+
+# =========================
+# Mouse actions
+# =========================
+
+floating_modifier $mod normal
+
+# =========================
+# Media keys
+# =========================
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 10%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+
+# =========================
+# Media control
+# =========================
+
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# =========================
+# Screenshots
+# =========================
+
+bindsym Print exec sh -c 'grim - | wl-copy --type image/png'
+bindsym Shift+Print exec sh -c 'slurp | grim -g - - | wl-copy --type image/png'
+bindsym Ctrl+Print exec sh -c 'mkdir -p ~/Pictures; slurp | grim -g - - | tee ~/Pictures/$(date +%s).png | wl-copy --type image/png'
+
+# =========================
+# Extras
+# =========================
+
+bindsym $mod+Shift+b exec --no-startup-id wofi-bluetooth
